@@ -1,0 +1,15 @@
+language: python
+python:
+- 3.5
+install:
+- pip --version
+script:
+- python setup.py build
+deploy:
+  provider: pypi
+  user: cdumay
+  on:
+    tags: true
+    repo: cdumay/kser-transport-http
+  password:
+    secure: HuLlWXdR/y1y8Ft3N9oJIuwwfkJ2N0iVQrS/tCa4ZKoMstVyee6HaNtwpcp2CriaeYzXYDtTHQQK8YoBIelVYvMjo6q7piiS2E78TMeKIT+i4mcyODqVyCwMvbCUtxi26UcKp7F/cUfrFytHs6TxXVx3sry60Tcb8lafD2BQRwewx8fS7/Fe0LAA5PwbdB5X9EpqH/3KGXCcucz4OrbaJ4ZqPKHtkdmuc0QTPNSoAeywx05p/PQj9RmI15q0obHr+ZMRxtoFREvI4TK1CefTR5TOMaG5burN/o+ODauSjvi7I+QIVVbaACP+hYBexQEsCSr+dPZPEVw1x4nCwUUce8zQ9mtk7iQL6kY02C37xQpPGU+m8asYkvrZdXdzfxRqEFFjdiTP+MNXDr2m5+O2D1EZLuulbV0n2Iy6Yeu0Ae+TC8qmU/vRw7CRJzQrEhcaWcBGceI4ZWIPituBMIL54DFPrg7nsSOthP67eyeDbKVJjSDki1Iln6dyHeaRkz3mBECkZR/hg/rSj6+JNcqGrTU11WypnpCXMYJPLM6vzkBVmKw1NdUZ6CdA9vt0tRPb1mPrSrFLp5eVl8xi84mrz4kqL/8TAXgcjE73fOoM/YSrr2OiniHJZ95SHspY9FWbpHo68DAhUiW9G0Bf4a6dRckn/d3fWSdG75gsvFMpjVc=
