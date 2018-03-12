@@ -42,7 +42,7 @@ class Producer(BaseController):
             return Result(stdout="{} message(s) sent".format(len(kmsgs)))
 
         except Exception as exc:
-            return Result.fromException(exc)
+            return Result.from_exception(exc)
 
     def send(self, topic, kmsg):
         """ Send the message into the given topic
@@ -65,7 +65,7 @@ class Producer(BaseController):
             )
 
         except Exception as exc:
-            result = Result.fromException(exc, kmsg.uuid)
+            result = Result.from_exception(exc, kmsg.uuid)
 
         finally:
             # noinspection PyUnboundLocalVariable
