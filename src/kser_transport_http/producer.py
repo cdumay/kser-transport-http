@@ -36,7 +36,7 @@ class Producer(BaseController):
         try:
             self.client.do_request(
                 method="POST", path="/topic/{}".format(topic), data=[
-                    dict(Value=k.MARSHMALLOW_SCHEMA.dump(k).data) for k in kmsgs
+                    dict(Value=k.MARSHMALLOW_SCHEMA.dump(k)) for k in kmsgs
                 ]
             )
             return Result(stdout="{} message(s) sent".format(len(kmsgs)))
@@ -56,7 +56,7 @@ class Producer(BaseController):
             self.client.do_request(
                 method="POST", params=dict(format="raw"),
                 path="/topic/{}".format(topic),
-                data=kmsg.MARSHMALLOW_SCHEMA.dump(kmsg).data
+                data=kmsg.MARSHMALLOW_SCHEMA.dump(kmsg)
             )
             result = Result(
                 uuid=kmsg.uuid, stdout="Message sent: {} ({})".format(
