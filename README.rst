@@ -2,4 +2,4 @@
 kser-transport-http
 *******************
 
-Kser HTTP producer/consumer
+**Deprecated**, use `kser >= 0.7.x <https://github.com/cdumay/kser>`_
